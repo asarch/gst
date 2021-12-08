@@ -17,14 +17,22 @@ git clone git://git.sv.gnu.org/smalltalk.git
 
 ## Compile the source code
 
+* From:
+
+https://stackoverflow.com/questions/17125678/floating-point-raises-divide-by-zero-error-in-gnu-smalltalk-gst
+
 ```sh
-cd smalltalk
+[$] cd smalltalk
 
-autoreconf -vi
+[$] export CFLAGS='-no-pie'
 
-./configure --verbose --enable-gtk=yes --enable-glibtest --enable-threads=posix
+[$] export LDFLAGS='-no-pie'
 
-make
+[$] autoreconf -vi
+
+[$] ./configure --verbose --enable-gtk=blox --enable-glibtest --enable-threads=posix
+
+[$] make
 ```
 
 ## Verifying the compilation
